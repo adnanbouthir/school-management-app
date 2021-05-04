@@ -46,3 +46,6 @@ body {
     background-color: #F7F7F7;
     
 }
+.text-muted {
+    color: #ff6e6c  !important;
+}
