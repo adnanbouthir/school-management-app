@@ -8,4 +8,8 @@ class Users extends Controller {
         $data = [];
         $this->view("users/login", $data);
     }
+
+    public function dashboard() {
+        $this->view("users/dashboard");
+    }
 }
