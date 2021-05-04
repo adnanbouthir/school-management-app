@@ -1,4 +1,4 @@
- <?php 
+<?php 
 /* 
 * app core Class:
 * creates URL & loads core controller
