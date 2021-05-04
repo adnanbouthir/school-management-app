@@ -7,6 +7,6 @@ define('DB_NAME', '__YOURDB__');
 // app Root 
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL root 
-define('URLROOT', '__URLPLACEHOLDER__');
+define('URLROOT', 'http://localhost/school-management-app/');
 // site name 
-define('SITENAME', '__SITENAMEPLACEHOLDER__');
+define('SITENAME', 'private school');
