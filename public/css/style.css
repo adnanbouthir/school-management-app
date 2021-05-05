@@ -40,12 +40,22 @@ body {
 }
 
 .cards .card-body {
-
+    cursor: pointer;
     border: solid;
     border-radius: 20px;
     background-color: #F7F7F7;
     
 }
+.cards .card-body:hover {
+    background-color: #ff6e6c;
+    color: #F7F7F7;
+    
+}
+
 .text-muted {
     color: #ff6e6c  !important;
+}
+
+.container-signin {
+    margin-top: 5em;
 }
