@@ -80,4 +80,24 @@ class Users extends Controller {
         $this->view("users/students", $data);
     }
     
+
+    public function prof() {
+        // init data 
+        $data = [];
+        $result = $this->adminModel->showProfessors();
+        foreach($result as $row) {
+            array_push($data, $row);
+        }
+        $this->view("users/prof", $data);
+    }
+    public function parents() {
+        // init data 
+        $data = [];
+        $result = $this->adminModel->showParents();
+        foreach($result as $row) {
+            array_push($data, $row);
+        }
+        $this->view("users/parents", $data);
+    }
+    
 }

@@ -15,6 +15,15 @@ class Admins {
         $this->db->query("SELECT * FROM students");
         return $this->db->resultSet();
     }
+    public function showProfessors() {
+        $this->db->query("SELECT * FROM professors");
+        return $this->db->resultSet();
+    }
+    public function showParents() {
+        $this->db->query("SELECT * FROM parents");
+        return $this->db->resultSet();
+    }
+
     // login as an admin
     public function LogIn($email, $password) {
         $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
