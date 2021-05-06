@@ -1,5 +1,5 @@
 <?php 
-class Admin {
+class Admins {
     private $db;
 
     public function __construct()
