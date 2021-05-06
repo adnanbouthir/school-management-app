@@ -37,7 +37,12 @@ class Users extends Controller {
 
                 // valid 
                 // check and set in logged in user 
-    
+                $loggedInUser = $this->adminModel->logIn($data['email'], $data['password']);
+                if ($loggedInUser) {
+                    header('Location:' .URLROOT . '/users/dashboard');
+                }else {
+                    $data['password_err'] = 'password incorrect';
+                }
         }
     }
  }
