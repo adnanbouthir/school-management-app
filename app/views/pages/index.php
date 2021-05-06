@@ -29,21 +29,21 @@
     <!-- Gallery -->
     <div class="row">
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-            <img src="../public/img/istockphoto-1000887536-612x612.jpg" class="w-100 shadow-1-strong rounded mb-4"
+            <img src="./public/img/istockphoto-1000887536-612x612.jpg" class="w-100 shadow-1-strong rounded mb-4"
                 alt="" />
 
-            <img src="../public/img/w555mh8d5vjlzk18skxj.webp" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+            <img src="./public/img/w555mh8d5vjlzk18skxj.webp" class="w-100 shadow-1-strong rounded mb-4" alt="" />
         </div>
 
         <div class="col-lg-4 mb-4 mb-lg-0">
-            <img src="../public/img/images.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+            <img src="./public/img/images.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
 
-            <img src="../public/img/www.usnews.com.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+            <img src="./public/img/www.usnews.com.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
         </div>
         <div class="col-lg-4 mb-4 mb-lg-0">
-            <img src="../public/img/imagees.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+            <img src="./public/img/imagees.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
 
-            <img src="../public/img/UNI330896.JPG" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+            <img src="./public/img/UNI330896.JPG" class="w-100 shadow-1-strong rounded mb-4" alt="" />
         </div>
     </div>
 
