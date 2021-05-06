@@ -5,9 +5,42 @@ class Users extends Controller {
         $this->adminModel = $this->model("Admins");
     }
     public function login() {
-        $data = [];
-        $this->view("users/login", $data);
+        // check for form submit 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // then process
+            // sanitize post form
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            // init data
+            $data = [
+                'email' => trim($_POST['email']),
+                'password' =>trim($_POST['password']),
+                'email_err' => '',
+                'password_err' => ''
+
+            ];
+                 // username validation 
+                 if (empty($data['email'])) {
+                    $data['email_err'] = 'please enter your email';
+                }
+                 // password validation 
+                 if (empty($data['password'])) {
+                    $data['password_err'] = 'please enter your password';
+                }
+                // check for email/password 
+                if ($this->adminModel->findUser($data['email'])) {
+                    // user found
+                }else {
+                    $data['email_err'] = 'please enter a valid email';
+                }
+                 // make sure array errors is empty
+            if (empty($data['email_err']) && empty($data['password_err'])) {
+
+                // valid 
+                // check and set in logged in user 
+    
+        }
     }
+ }
 
     public function dashboard() {
         // init data 

@@ -29,5 +29,12 @@ class Admins {
         $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
         $this->db->bind(':email', $email);
         $row =$this->db->single();
+            // check row 
+
+        if ($this->db->RowCount() > 0) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }

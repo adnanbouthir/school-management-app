@@ -32,7 +32,7 @@
 </style>
 <main class="form-signin">
   <div class="container-signin">
-    <form name="myForm" onsubmit="return validateForm()" method="POST">
+    <form name="myForm" onsubmit="return validateForm()" action="" method="POST">
 
 
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
