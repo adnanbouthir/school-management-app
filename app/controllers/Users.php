@@ -42,8 +42,21 @@ class Users extends Controller {
                     header('Location:' .URLROOT . '/users/dashboard');
                 }else {
                     $data['password_err'] = 'password incorrect';
+                    $this->view('users/login', $data);
                 }
+        }else {
+            $this->view('users/login', $data);
         }
+    }else {
+        // initialize data
+        $data = [
+            'email' => '',
+            'password' => '',
+            'username_err' => '',
+            'password_err' => '',
+        ];
+        // load view
+        $this->view('users/login', $data);
     }
  }
 
