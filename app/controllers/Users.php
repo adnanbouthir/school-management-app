@@ -69,5 +69,15 @@ class Users extends Controller {
         }
         $this->view("users/dashboard", $data);
     }
+
+    public function students() {
+        // init data 
+        $data = [];
+        $result = $this->adminModel->showStudents();
+        foreach($result as $row) {
+            array_push($data, $row);
+        }
+        $this->view("users/students", $data);
+    }
     
 }
