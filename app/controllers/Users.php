@@ -2,7 +2,7 @@
 class Users extends Controller {
     public function __construct()
     {
-        
+        $this->adminModel = $this->model("Admins")
     }
     public function login() {
         $data = [];
@@ -10,6 +10,11 @@ class Users extends Controller {
     }
 
     public function dashboard() {
-        $this->view("users/dashboard");
+        $result = $this->adminModel->showAdmins();
+        foreach ($result as $row) {
+            array_push($data, $row);
+        }
+        $this->view("users/dashboard", $data);
     }
+    
 }
