@@ -104,7 +104,27 @@ class Users extends Controller {
             ];
 
 
-        } else {
+         
+             //  validation email
+
+             if (empty($data['email_adress'])) {
+                $data['email_err'] = 'please enter email';
+            }
+             // validate password
+
+            if (empty($data['password'])) {
+                $data['password_err'] = 'please enter your password';
+            }
+             //  make sure errors are empty
+            if (empty($data['email_err'])  && empty($data['password_err']) ) {
+            //  validated
+            die('success');
+            }else {
+            //  load view with errors
+            $this->view('users/login' , $data);
+        }
+    }
+        else {
             // load form 
             // init data
             $data = [
@@ -114,19 +134,10 @@ class Users extends Controller {
                 'password_err' => ''
 
             ];
-             //  validation email
-
-             if (empty($data['email_adress'])) {
-                $data['email_err'] = 'please enter email';
-            }
-             // validate password
-
-             if (empty($data['password'])) {
-                $data['password_err'] = 'please enter your password';
-            }
 
             // load view 
             $this->view('users/login', $data);
         }
+    
+    } 
     }
-}
