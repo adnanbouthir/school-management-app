@@ -151,6 +151,7 @@ class Users extends Controller {
             //  if logged in admin create session
             if ($loggedInAdmin) {
                 // create session
+                die('success');
             }else {
                 $data['password_err'] = 'password incorrect';
 

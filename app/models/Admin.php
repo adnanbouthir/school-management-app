@@ -84,6 +84,22 @@ class Admin {
 
     }
 
+    //  method to log admin in
+
+    public function login($email, $password) {
+        $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
+        $this->db->bind(':email', $email);
+
+        $row = $this->db->single();
+
+        $hashed_password = $row->password;
+        if (password_verify($password, $hashed_password)) {
+            return $row;
+        }else {
+            return false; 
+        }
+    }
+
     // method to find admin by email
     public function findAdminByEmail($email) {
         $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
