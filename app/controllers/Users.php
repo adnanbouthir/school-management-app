@@ -31,7 +31,7 @@ class Users extends Controller {
                 $data['email_err'] = 'please enter email';
             }else {
                 //  check email
-                if ($this->adminModel->findAdminByEmail($data['email_adress '])) {
+                if ($this->adminModel->findAdminByEmail($data['email_adress'])) {
                     $data['email_err'] = 'email already taken';
 
                 }
@@ -70,9 +70,9 @@ class Users extends Controller {
             $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
 
             // register Admin 
-            if($this->userModel->register($data)) {
+            if($this->adminModel->register($data)) {
                 // redirect to login after register
-                header('location:' . URLROOT . '/users/login');
+                redirect('/users/login');
             }else {
                 die('something went wrong');
             }
