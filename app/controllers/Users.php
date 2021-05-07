@@ -72,6 +72,7 @@ class Users extends Controller {
             // register Admin 
             if($this->adminModel->register($data)) {
                 // redirect to login after register
+                flash('register_sucess', 'You are now registered and can log in');
                 redirect('/users/login');
             }else {
                 die('something went wrong');
@@ -132,10 +133,29 @@ class Users extends Controller {
             if (empty($data['password'])) {
                 $data['password_err'] = 'please enter your password';
             }
+
+            //  check for admin email 
+            if ($this->adminModel->findAdminByEmail($data['email_adress'])) {
+                // admin found
+            }else {
+                // admin not found
+                $data['email_err'] = 'no admin found'; 
+            }
+
              //  make sure errors are empty
             if (empty($data['email_err'])  && empty($data['password_err']) ) {
             //  validated
-            die('success');
+            //  check and set logged in admin
+            $loggedInAdmin = $this->adminModel->login($data['email_adress'], $data['password'] );
+
+            //  if logged in admin create session
+            if ($loggedInAdmin) {
+                // create session
+            }else {
+                $data['password_err'] = 'password incorrect';
+
+                $this->view('users/login', $data);
+            }
             }else {
             //  load view with errors
             $this->view('users/login' , $data);

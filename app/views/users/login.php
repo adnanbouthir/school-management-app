@@ -45,6 +45,7 @@
     <div class="container-signup">
         <div class="col-md-6 mx-auto">
             <div class="card card-body-bg-light mt-5 mb-4">
+                <?php flash('register_sucess'); ?>
                 <h3 class="mx-auto" class="h3 mb-3 fw-normal"> Sign in</h3>
             </div>
 
