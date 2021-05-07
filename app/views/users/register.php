@@ -45,10 +45,11 @@
           <div class="card card-body-bg-light mt-5 mb-4">
       <h3 class="mx-auto" class="h3 mb-3 fw-normal"> Sign up</h3>
       </div>
+     
     </div>
-    <form name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/login" method="POST">
+    <form name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/register" method="POST">
         <div class="form-floating">
-        <input type="text" class="form-control " id="floatingInput" name="first_name" placeholder="name@example.com">
+        <input type="text" class="form-control form-control-lg" id="floatingInput" name="first_name" placeholder="name@example.com">
         <label for="floatingInput">first name <sup>*</sup></label>
         </div>
 
@@ -59,7 +60,8 @@
       
 
       <div class="form-floating">
-        <input type="email" class="form-control " id="floatingInput" name="email" placeholder="name@example.com">
+        <input type="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['email']; ?>" id="floatingInput" name="email" placeholder="name@example.com">
+        <span class="'invalid-feedback"><?php echo $data['email_err'] ?> </span>
         <label for="floatingInput">Email address <sup>*</sup></label>
       </div>
       <div class="form-floating">
@@ -71,9 +73,9 @@
         <label for="floatingPassword">Repeat Password <sup>*</sup></label>
       </div>
 
-      
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-
+      <div class="container mb-5">
+      <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign up</button>
+      </div>
     </form>
   </div>
 </main>

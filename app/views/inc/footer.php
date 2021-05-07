@@ -1,5 +1,10 @@
 
-<footer class="footer mt-auto py-3 bg-light">
+<style>
+  .footer {
+    margin-top: 0.8em !important;
+  }
+</style>
+<footer class="footer mt-auto py-3  bg-light">
   <div class="container d-flex justify-content-around">
     <span class="text-muted">© 2018–2021</span>
   </div>
