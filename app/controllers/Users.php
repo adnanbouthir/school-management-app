@@ -20,6 +20,7 @@ class Users extends Controller {
                 'confirm_pass' => '',
                 'fname_err' => '',
                 'lname_err' => '',
+                'email_err' => '',
                 'password_err' => '',
                 'confirmp_err' => ''
 
