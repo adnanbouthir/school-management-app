@@ -66,8 +66,18 @@ class Users extends Controller {
         //  make sure errors are empty
         if (empty($data['email_err']) && empty($data['confirmp_err']) && empty($data['password_err']) && empty($data['fname_err']) && empty($data['lname_err'])) {
             //  validated
-            // die('success');
-            
+            //  hash password
+            $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+
+            // register Admin 
+            if($this->userModel->register($data)) {
+                // redirect to login after register
+                header('location:' . URLROOT . '/users/login');
+            }else {
+                die('something went wrong');
+            }
+
+
         }else {
             //  load view with errors
             $this->view('users/register' , $data);

@@ -59,6 +59,31 @@ class Admin {
     {
         $this->db = new Database;
     }
+
+    // method to register admin 
+
+    public function register($data) {
+        // preparing query
+
+        $this->db->query('INSERT INTO admins (first_name, last_name, email_adress, password) VALUES(:first_name, :last_name, :email_adress, :password)');
+        // binding values
+
+        $this->db->bind(':first_name' ,$data['first_name']);
+        $this->db->bind(':last_name' ,$data['last_name']);
+        $this->db->bind(':email_adress' ,$data['email_adress']);
+        $this->db->bind(':password' ,$data['password']);
+
+        // executing query 
+        if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+
+
+
+    }
+
     // method to find admin by email
     public function findAdminByEmail($email) {
         $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
