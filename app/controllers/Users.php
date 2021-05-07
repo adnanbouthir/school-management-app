@@ -2,7 +2,7 @@
 class Users extends Controller {
     public function __construct()
     {
-        
+        $this->adminModel = $this->model('Admin');
     }
     // register method handling post request and loading view
     public function register() {
@@ -29,6 +29,12 @@ class Users extends Controller {
 
             if (empty($data['email_adress'])) {
                 $data['email_err'] = 'please enter email';
+            }else {
+                //  check email
+                if ($this->adminModel->findAdminByEmail($data['email_adress '])) {
+                    $data['email_err'] = 'email already taken';
+
+                }
             }
 
             // validate first name
@@ -60,7 +66,8 @@ class Users extends Controller {
         //  make sure errors are empty
         if (empty($data['email_err']) && empty($data['confirmp_err']) && empty($data['password_err']) && empty($data['fname_err']) && empty($data['lname_err'])) {
             //  validated
-            die('success');
+            // die('success');
+            
         }else {
             //  load view with errors
             $this->view('users/register' , $data);

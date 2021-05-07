@@ -51,3 +51,25 @@
 //         }
 //     }
 // }
+
+class Admin {
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = new Database;
+    }
+    // method to find admin by email
+    public function findAdminByEmail($email) {
+        $this->db->query('SELECT * FROM admins WHERE email_adress = :email');
+        $this->db->bind(':email' ,$email);
+
+        $row = $this->db->single();
+        //  check row return
+        if ($this->db->RowCount() > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+}
