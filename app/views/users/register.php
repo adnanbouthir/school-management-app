@@ -85,7 +85,7 @@
 
             <div class="form-floating">
                 <input type="password" class="form-control <?php echo (!empty($data['confirmp_err'])) ? 'is-invalid' : '';?>"
-                    value="<?php echo $data['confirm_pass']; ?>" id="floatingInput" name="email"
+                    value="<?php echo $data['confirm_pass']; ?>" id="floatingInput" name="confirm_pass"
                     placeholder="name@example.com">
                 <span class="'invalid-feedback"><?php echo $data['confirmp_err'] ?> </span>
                 <label for="floatingInput">confirm password <sup>*</sup></label>
