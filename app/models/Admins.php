@@ -12,7 +12,7 @@ class Admins {
         return $this->db->resultSet();
     }
     public function showStudents() {
-        $this->db->query("SELECT students.id, students.first_name, students.last_name, students.gender, students.class, parents.first_name, parents.last_name FROM `students` LEFT JOIN `parents` ON students.id = parents.student_id");
+        $this->db->query("SELECT students.id, students.first_name AS student, students.last_name AS student_last, students.gender, students.class, parents.first_name, parents.last_name FROM `students` LEFT JOIN `parents` ON students.id = parents.student_id");
         return $this->db->resultSet();
     }
     public function showProfessors() {
