@@ -9,6 +9,7 @@ class Students extends Controller {
         }
 
         $this->studentModel = $this->model('Student');
+        $this->userModel = $this->model('admin');
     }
 
     public function index () {
@@ -210,9 +211,14 @@ class Students extends Controller {
     }
 
     public function show($id) {
+
+        $student = $this->studentModel->getStudentById($id);
+
         // init data
-        $data = [];
-        
+        $data = [
+            'students' => $student 
+        ];
+
         $this->view('students/show', $data);
     }
 

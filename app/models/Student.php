@@ -37,4 +37,13 @@ class Student {
             return false;
         }
     }
+
+    public function getStudentById($id) {
+        $this->db->query('SELECT * FROM students WHERE id = :id');
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
 }
