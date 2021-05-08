@@ -183,7 +183,7 @@ class Users extends Controller {
         $_SESSION['admin_email'] = $admin->email_adress;
         $_SESSION['first_name'] = $admin->first_name;
         $_SESSION['last_name'] = $admin->last_name;
-        redirect('/pages/index');
+        redirect('/students');
     }
     public function logout() {
         unset($_SESSION['admin_id']);
