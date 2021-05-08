@@ -125,9 +125,6 @@ class Students extends Controller {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
 
-            
-            
-
             // init data 
             $data =  [
                 'first_name' => trim($_POST['first_name']),
@@ -176,7 +173,7 @@ class Students extends Controller {
                 //  validated
 
                 if ($this->studentModel->addStudent($data)) {
-                    flash('student_message', 'Student Added');
+                    flash('student_message', 'Student Updated');
                     redirect('/students');
                 }else {
                     die('something went wrong');
@@ -184,29 +181,33 @@ class Students extends Controller {
             }else {
                 // load view with errors
 
-                $this->view('students/add', $data);
+                $this->view('students/edit', $data);
             }
 
 
         }else {
+            //  get student 
+            $student = $this->studentModel->getStudentById($id);
             $data =  [
-                'first_name' => '',
-                'last_name' => '',
-                'gender' => '',
-                'class' => '',
-                'parents' =>'',
-                'adress' => '',
-                'date_of_birth' => '',
-                'email' => '',
+                'id' => $id,
+                'first_name' => $student->first_name,
+                'last_name' => $student->last_name,
+                'gender' => $student->gender,
+                'class' => $student->class,
+                'parents' =>$student->parents,
+                'adress' => $student->adress,
+                'date_of_birth' => $student->date_of_birth,
+                'email' => $student->email,
                 'first_name_err' => '',
                 'last_name_err' => '',
                 'class_err' => '',
                 'adress_err' => '',
                 'email_err' => '',
-                'birth_err' => ''
+                'birth_err' => '',
+                'parents_err' => ''
             ];
     
-            $this->view('students/edit ', $data);
+            $this->view('students/edit', $data);
         }
     }
 
