@@ -127,6 +127,7 @@ class Students extends Controller {
 
             // init data 
             $data =  [
+                'id' => $id,
                 'first_name' => trim($_POST['first_name']),
                 'last_name' => trim($_POST['last_name']),
                 'gender' =>$_POST['gender'],
@@ -172,7 +173,7 @@ class Students extends Controller {
             if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['class_err']) && empty($data['email_err']) && empty($data['adress_error'])) {
                 //  validated
 
-                if ($this->studentModel->addStudent($data)) {
+                if ($this->studentModel->updateStudent($data)) {
                     flash('student_message', 'Student Updated');
                     redirect('/students');
                 }else {

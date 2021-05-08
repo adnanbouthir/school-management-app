@@ -36,6 +36,40 @@ class Student {
         }else {
             return false;
         }
+    } 
+
+      //  update student query
+      public function updateStudent($data) {
+        // preparing query
+
+        $this->db->query('UPDATE students SET 
+        first_name = :first_name,
+        last_name = :last_name,
+        gender = :gender,
+        class = :class,
+        parents = :parents,
+        adress = :adress,
+        date_of_birth = :date_of_birth,
+        email = :email_adress
+        WHERE id = :id');
+        // binding values
+        $this->db->bind(':id' ,$data['id']);
+        $this->db->bind(':first_name' ,$data['first_name']);
+        $this->db->bind(':last_name' ,$data['last_name']);
+        $this->db->bind(':gender' ,$data['gender']);
+        $this->db->bind(':class' ,$data['class']);
+        $this->db->bind(':parents' ,$data['parent']);
+        $this->db->bind(':adress' ,$data['adress']);
+        $this->db->bind(':date_of_birth' ,$data['date_of_birth']);
+        $this->db->bind(':email_adress' ,$data['email']);
+        
+
+        // executing query 
+        if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public function getStudentById($id) {
