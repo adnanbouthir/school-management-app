@@ -23,4 +23,23 @@ class Students extends Controller {
 
         $this->view('students/index', $data);
     }
+
+    // method to add students to db
+
+    public function add() {
+
+
+        $data =  [
+            'first_name' => '',
+            'last_name' => '',
+            'gender' => '',
+            'class' => '',
+            'parents' =>'',
+            'adress' => '',
+            'date_of_birth' => '',
+            'email' => ''
+        ];
+
+        $this->view('students/add', $data);
+    }
 }
