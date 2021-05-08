@@ -151,7 +151,7 @@ class Users extends Controller {
             //  if logged in admin create session
             if ($loggedInAdmin) {
                 // create session
-                die('success');
+                $this->createAdminSession($loggedInAdmin);
             }else {
                 $data['password_err'] = 'password incorrect';
 
@@ -178,4 +178,26 @@ class Users extends Controller {
         }
     
     } 
+    public function CreateAdminSession($admin) {
+        $_SESSION['admin_id'] = $admin->id; 
+        $_SESSION['admin_email'] = $admin->email_adress;
+        $_SESSION['first_name'] = $admin->first_name;
+        $_SESSION['last_name'] = $admin->last_name;
+        redirect('/pages/index');
     }
+    public function logout() {
+        unset($_SESSION['admin_id']);
+        unset($_SESSION['admin_email']);
+        unset($_SESSION['first_name']);
+        unset($_SESSION['last_name']);
+        session_destroy();
+        redirect('/users/login');
+    }
+    public function isLoggedin() {
+        if (isset($_SESSION['admin_id'])) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+}
