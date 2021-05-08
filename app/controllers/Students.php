@@ -209,4 +209,11 @@ class Students extends Controller {
         }
     }
 
+    public function show($id) {
+        // init data
+        $data = [];
+        
+        $this->view('students/show', $data);
+    }
+
 }

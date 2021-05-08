@@ -22,6 +22,7 @@
 <p class="card-tittle">class : <?php echo $student->class; ?></p>
 <p class="card-tittle">email : <?php echo $student->email; ?></p>
 <p class="card-tittle">birthdate : <?php echo $student->date_of_birth; ?></p>
+<a href="<?php echo URLROOT; ?>/students/show/<?php echo $student->id;?>" class="btn btn-primary pull-right mx-auto">SHOW MORE</a>
 
 
 
