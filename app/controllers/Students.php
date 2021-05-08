@@ -224,4 +224,17 @@ class Students extends Controller {
         $this->view('students/show', $data);
     }
 
+    public function delete($id) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            if ($this->studentModel->deleteStudent($id)) {
+                flash('student_message' , 'Student REMOVED');
+                redirect('/students');
+            }
+            
+        }else {
+            redirect('/students');
+        }
+    }
+
 }
