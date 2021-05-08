@@ -1,5 +1,6 @@
 <?php require APPROOT .'/views/inc/header.php'; ?>
 <?php require APPROOT .'/views/inc/nav.php'; ?>
+<?php flash('student_message'); ?>
 
 <div class="row mb-3">
   <div class="col-md-6">

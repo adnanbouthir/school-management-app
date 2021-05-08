@@ -33,7 +33,7 @@ class Students extends Controller {
             
 
             
-            var_dump($_POST);
+            
 
             // init data 
             $data =  [
@@ -72,6 +72,26 @@ class Students extends Controller {
             // validate email and adress
             if (empty($data['email'])) {
                 $data['email_err'] = 'Please enter an email';
+            }
+            if (empty($data['adress'])) {
+                $data['adress_err'] = 'Please enter an address';
+            }
+
+            // make sure there is no more errors
+
+            if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['class_err']) && empty($data['email_err']) && empty($data['adress_error'])) {
+                //  validated
+
+                if ($this->studentModel->addStudent($data)) {
+                    flash('student_message', 'Student Added');
+                    redirect('/students');
+                }else {
+                    die('something went wrong');
+                }
+            }else {
+                // load view with errors
+
+                $this->view('students/add', $data);
             }
 
 
