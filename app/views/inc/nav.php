@@ -1,8 +1,4 @@
-<style>
-  * {
-    overflow: hidden;
-  }
-</style>
+
 <nav class="navbar navbar-expand navbar-dark bg-dark d-flex p-2 bd-highlight" aria-label="Second navbar example">
     <div class="container-fluid">
       <a class="navbar-brand" href="<?php echo URLROOT;?>/Pages/index">PRIVATE SCHOOL</a>
