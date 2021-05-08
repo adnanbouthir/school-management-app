@@ -20,12 +20,20 @@
 <p class="card-tittle">adrress : <?php echo $data['students']->adress; ?></p>
 <p class="card-tittle">email : <?php echo $data['students']->email; ?></p>
 <p class="card-tittle">birthdate : <?php echo $data['students']->date_of_birth; ?></p>
-<a href="<?php echo URLROOT; ?>/students/show/<?php echo $data['students']->id;?>" class="btn btn-primary pull-right mx-auto">SHOW MORE</a>
+<div>
+<a href="<?php echo URLROOT; ?>/students/edit/<?php echo $data['students']->id;?>" class="btn btn-primary pull-left">edit</a>
+<a href="<?php echo URLROOT; ?>/students/delete/<?php echo $data['students']->id;?>" class="btn btn-primary pull-right">delete</a>
+</div>
 
 
 
 
 </div>
 
-
 <?php require APPROOT .'/views/inc/footer.php'; ?>
+
+
+
+
+
+
