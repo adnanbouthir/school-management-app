@@ -80,4 +80,19 @@ class Student {
 
         return $row;
     }
+
+    // delete student query
+
+    public function deleteStudent($id) {
+
+        $this->db->query('DELETE FROM students WHERE id = :id');
+        $this->db->bind(':id' , $id);
+
+         // executing query 
+         if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

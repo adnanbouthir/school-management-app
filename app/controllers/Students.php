@@ -230,6 +230,8 @@ class Students extends Controller {
             if ($this->studentModel->deleteStudent($id)) {
                 flash('student_message' , 'Student REMOVED');
                 redirect('/students');
+            }else {
+                die('Something went wrong');
             }
             
         }else {
