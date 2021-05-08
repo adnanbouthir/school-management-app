@@ -17,7 +17,8 @@
 
 
 <div class="card card-body mb-3">
-<h5 class="card-tittle mb-4"><?php echo $student->first_name; ?></h5>
+<h5 class="card-tittle mb-4 mx-auto"><?php echo $student->first_name; ?></h5>
+<hr>
 <p class="card-tittle">last name : <?php echo $student->last_name; ?></p>
 <p class="card-tittle">Serial num : <?php echo $student->id; ?></p>
 
