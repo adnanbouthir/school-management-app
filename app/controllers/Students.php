@@ -37,7 +37,12 @@ class Students extends Controller {
             'parents' =>'',
             'adress' => '',
             'date_of_birth' => '',
-            'email' => ''
+            'email' => '',
+            'first_name_err' => '',
+            'last_name_err' => '',
+            'class_err' => '',
+            'adress_err' => '',
+            'email_err' => ''
         ];
 
         $this->view('students/add', $data);

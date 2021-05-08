@@ -57,20 +57,45 @@
            
 
             <div class="form-floating">
-                <input type="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : '';?>"
-                    value="<?php echo $data['email_adress']; ?>" id="floatingInput" name="email"
+                <input type="text" class="form-control <?php echo (!empty($data['first_name_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['first_name']; ?>" id="floatingInput" name="first_name"
                     placeholder="name@example.com">
-                <span class="'invalid-feedback"><?php echo $data['email_err'] ?> </span>
-                <label for="email">Email address <sup>*</sup></label>
+                <span class="'invalid-feedback"><?php echo $data['first_name_err'] ?> </span>
+                <label for="first_name">first name <sup>*</sup></label>
             </div>
 
             <div class="form-floating">
-                <input type="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : '';?>"
-                    value="<?php echo $data['password']; ?>" id="floatingInput" name="password"
+                <input type="text" class="form-control <?php echo (!empty($data['last_name_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['last_name']; ?>" id="floatingInput" name="last_name"
                     placeholder="name@example.com">
-                <span class="'invalid-feedback"><?php echo $data['password_err'] ?> </span>
-                <label for="password">password  <sup>*</sup></label>
+                <span class="'invalid-feedback"><?php echo $data['last_name_err'] ?> </span>
+                <label for="last_name">last name <sup>*</sup></label>
             </div>
+
+            <div class="form-floating">
+                <input type="text" class="form-control <?php echo (!empty($data['class_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['class']; ?>" id="floatingInput" name="class"
+                    placeholder="name@example.com">
+                <span class="'invalid-feedback"><?php echo $data['class_err'] ?> </span>
+                <label for="class">class <sup>*</sup></label>
+            </div>
+            
+            <div class="form-floating">
+                <input type="text" class="form-control <?php echo (!empty($data['adress_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['adress']; ?>" id="floatingInput" name="adress"
+                    placeholder="name@example.com">
+                <span class="'invalid-feedback"><?php echo $data['adress_err'] ?> </span>
+                <label for="class">address <sup>*</sup></label>
+            </div>
+
+            <div class="form-floating">
+                <input type="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['email']; ?>" id="floatingInput" name="email"
+                    placeholder="name@example.com">
+                <span class="'invalid-feedback"><?php echo $data['email_err'] ?> </span>
+                <label for="class">email <sup>*</sup></label>
+            </div> 
+
 
 
          
