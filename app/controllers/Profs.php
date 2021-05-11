@@ -11,6 +11,14 @@ class Profs extends Controller {
     }
     
     public function index() {
-        
+        // fetch for profs 
+        $profs = $this->profModel->getProfs();
+
+        // init data
+        $data = [
+            'profs' => $profs
+        ];
+
+        $this->view('profs/index', $data);
     }
 }
