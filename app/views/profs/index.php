@@ -7,7 +7,7 @@
   <h1>proffesors</h1>
   </div>
   <div class="col-md-6">
-  <a href="<?php echo URLROOT; ?>/students/add" class="btn btn-primary pull-right">
+  <a href="<?php echo URLROOT; ?>/profs/add" class="btn btn-primary pull-right">
   <i class="fa fa-pencil"></i> Add proffesor
   </a>
   </div>
@@ -22,7 +22,7 @@
 <p class="card-tittle">last name : <?php echo $prof->last_name; ?></p>
 <p class="card-tittle">Serial num : <?php echo $prof->id; ?></p>
 
-<a href="<?php echo URLROOT; ?>/students/show/<?php echo $prof->id;?>" class="btn btn-primary pull-right mx-auto">SHOW MORE</a>
+<a href="<?php echo URLROOT; ?>/profs/show/<?php echo $prof->id;?>" class="btn btn-primary pull-right mx-auto">SHOW MORE</a>
 
 
 

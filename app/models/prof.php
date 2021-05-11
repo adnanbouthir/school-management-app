@@ -37,4 +37,12 @@ class prof {
             return false;
         }
     }
+
+    public function getProfById($id) {
+        $this->db->query('SELECT * FROM professors WHERE id = :id');
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+        return $row;
+    }
 }

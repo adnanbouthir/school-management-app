@@ -27,7 +27,9 @@ class Profs extends Controller {
     public function add() {
         //  check if form is submitted 
 
-        
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                # code...
+            
 
             // init data 
             $data =  [
@@ -83,5 +85,38 @@ class Profs extends Controller {
                 // load view with errors
                 $this->view('profs/add', $data);
             }
- } 
+       } else {
+        // init data
+        $data =  [
+            'first_name' => '',
+            'last_name' => '',
+            'gender' =>'',
+            'class' => '',
+            'subject' => '',
+            'phone' => '',
+            'first_name_err' => '',
+            'last_name_err' => '',
+            'class_err' => '',
+            'subject_err' => '',
+            'phone_err' => ''
+        ];
+
+        $this->view('profs/add', $data);
+       }
+    }
+
+    public function edit($id) {
+
+    }
+
+    public function show($id) {
+        $prof = $this->profModel->getProfById($id);
+
+        // init data
+        $data = [
+            'profs' => $prof 
+        ];
+
+        $this->view('profs/show', $data);
+    }
 }
