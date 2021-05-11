@@ -14,7 +14,7 @@ class Students extends Controller {
 
     public function index () {
         // fetch for students
-        $students = $this->studentModel->getstudents();
+        $students = $this->studentModel->getStudents();
 
 
         // init data
@@ -97,6 +97,7 @@ class Students extends Controller {
 
 
         }else {
+            
             $data =  [
                 'first_name' => '',
                 'last_name' => '',
