@@ -73,6 +73,15 @@ class Profs extends Controller {
 
             if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['class_err']) && empty($data['subject_err']) && empty($data['phone_err'])) {
                 //  validated
-    }
+                if ($this->profModel->addProfs($data)) {
+                    flash('prof_message', 'Teacher added successfully');
+                    redirect('/profs');
+                }else {
+                    die('Something went wrong');
+                }
+            }else {
+                // load view with errors
+                $this->view('profs/add', $data);
+            }
  } 
 }

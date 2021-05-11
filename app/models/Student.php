@@ -19,7 +19,9 @@ class Student {
     public function addStudent($data) {
         // preparing query
 
-        $this->db->query('INSERT INTO students (first_name, last_name, gender, class, adress, date_of_birth ,email) VALUES(:first_name, :last_name, :gender, :class, :adress, :date_of_birth, :email_adress)');
+        $this->db->query('INSERT INTO 
+        students (first_name, last_name, gender, class, adress, date_of_birth ,email) 
+        VALUES(:first_name, :last_name, :gender, :class, :adress, :date_of_birth, :email_adress)');
         // binding values
 
         $this->db->bind(':first_name' ,$data['first_name']);

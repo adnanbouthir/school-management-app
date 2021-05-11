@@ -84,7 +84,7 @@ class Students extends Controller {
                 //  validated
 
                 if ($this->studentModel->addStudent($data)) {
-                    flash('student_message', 'Student Added');
+                    flash('student_message', 'Student Added successfully');
                     redirect('/students');
                 }else {
                     die('something went wrong');
