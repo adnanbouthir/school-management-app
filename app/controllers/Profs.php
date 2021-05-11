@@ -21,4 +21,58 @@ class Profs extends Controller {
 
         $this->view('profs/index', $data);
     }
+
+    // method to add teachers:
+
+    public function add() {
+        //  check if form is submitted 
+
+        
+
+            // init data 
+            $data =  [
+                'first_name' => trim($_POST['first_name']),
+                'last_name' => trim($_POST['last_name']),
+                'gender' =>$_POST['gender'],
+                'class' => trim($_POST['class']),
+                'subject' => trim($_POST['subject']),
+                'phone' => $_POST['phone'],
+                'first_name_err' => '',
+                'last_name_err' => '',
+                'class_err' => '',
+                'subject_err' => '',
+                'phone_err' => ''
+            ];
+
+            // validate name
+
+            if (empty($data['first_name'])) {
+                $data['first_name_err'] = 'Please enter a name';
+            }
+            if (empty($data['last_name'])) {
+                $data['last_name_err'] = 'Please enter a name';
+            }
+
+            // validate gender/class
+            if (empty($data['gender'])) {
+                $data['gender_err'] = 'Please enter a gender';
+            }
+            if (empty($data['class'])) {
+                $data['class_err'] = 'Please enter a class';
+            }
+
+            // validate email and adress
+            if (empty($data['subject'])) {
+                $data['subject_err'] = 'Please enter an email';
+            }
+            if (empty($data['phone'])) {
+                $data['phone_err'] = 'Please enter an address';
+            }
+
+            // make sure there is no more errors
+
+            if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['class_err']) && empty($data['subject_err']) && empty($data['phone_err'])) {
+                //  validated
+    }
+ } 
 }
