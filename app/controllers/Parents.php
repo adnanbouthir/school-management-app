@@ -111,4 +111,18 @@ class Parents extends Controller {
             $this->view('parents/add', $data);
         }
     }
+    public function edit($id) {
+
+    }
+    
+    public function show($id) {
+        $parent = $this->parentModel->getParentById($id);
+
+        // init data
+        $data = [
+            'parents' => $parent 
+        ];
+
+        $this->view('parents/show', $data);
+    }
 }

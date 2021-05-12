@@ -13,6 +13,14 @@ class StudentParent {
 
         return $results;
     }
+    public function getParentByid($id) {
+        $this->db->query('SELECT * FROM parents WHERE id = :id');
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
     public function addParents($data) {
         // preparing query 
         $this->db->query('INSERT INTO parents
