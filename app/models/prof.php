@@ -38,6 +38,33 @@ class prof {
         }
     }
 
+    public function updateProf($data) {
+        //  preparing query 
+        $this->db->query('UPDATE professors SET
+        first_name = :first_name,
+        last_name = :last_name,
+        gender = :gender,
+        class = :class,
+        subject = :subject,
+        phone = :phone
+        ');
+
+        // binding values
+        $this->db->bind(':first_name', $data['first_name']);
+        $this->db->bind(':last_name', $data['last_name']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':class', $data['class']);
+        $this->db->bind(':subject', $data['subject']);
+        $this->db->bind(':phone', $data['phone']);
+
+        // executing query 
+        if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     public function getProfById($id) {
         $this->db->query('SELECT * FROM professors WHERE id = :id');
         $this->db->bind(':id', $id);

@@ -45,12 +45,14 @@ class Students extends Controller {
                 'adress' => trim($_POST['adress']),
                 'date_of_birth' => $_POST['date_of_birth'],
                 'email' => trim($_POST['email']),
+                'teacher' => trim($_POST['teacher']),
                 'first_name_err' => '',
                 'last_name_err' => '',
                 'class_err' => '',
                 'adress_err' => '',
                 'email_err' => '',
-                'birth_err' => ''
+                'birth_err' => '',
+                'teacher_err' => ''
             ];
 
             // validate name
@@ -112,7 +114,8 @@ class Students extends Controller {
                 'class_err' => '',
                 'adress_err' => '',
                 'email_err' => '',
-                'birth_err' => ''
+                'birth_err' => '',
+                'teacher_err' =>''
             ];
     
             $this->view('students/add', $data);

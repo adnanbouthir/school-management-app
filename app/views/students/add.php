@@ -102,6 +102,13 @@
             </div>
 
             <div class="form-floating">
+                <input type="text" class="form-control <?php echo (!empty($data['teacher_err'])) ? 'is-invalid' : '';?>"
+                    value="<?php echo $data['date_of_birth']; ?>" id="floatingInput" name="teacher">
+                <span class="'invalid-feedback"><?php echo $data['teacher_err'] ?> </span>
+                <label for="teacher">professor <sup>*</sup></label>
+            </div>
+
+            <div class="form-floating">
                 <select name="gender" id="" class="form-select"  required>
                     <option selected>Gender</option>
                     <option value="male">male</option>

@@ -20,8 +20,8 @@ class Student {
         // preparing query
 
         $this->db->query('INSERT INTO 
-        students (first_name, last_name, gender, class, adress, date_of_birth ,email) 
-        VALUES(:first_name, :last_name, :gender, :class, :adress, :date_of_birth, :email_adress)');
+        students (first_name, last_name, gender, class, adress, date_of_birth ,email, teacher) 
+        VALUES(:first_name, :last_name, :gender, :class, :adress, :date_of_birth, :email_adress, :teacher)');
         // binding values
 
         $this->db->bind(':first_name' ,$data['first_name']);
@@ -31,6 +31,7 @@ class Student {
         $this->db->bind(':adress' ,$data['adress']);
         $this->db->bind(':date_of_birth' ,$data['date_of_birth']);
         $this->db->bind(':email_adress' ,$data['email']);
+        $this->db->bind(':teacher' ,$data['teacher']);
 
         // executing query 
         if ($this->db->execute()) {

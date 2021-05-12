@@ -163,7 +163,7 @@ class Profs extends Controller {
             }
         }else {
             // load view with errors
-            $this->view('profs/add', $data);
+            $this->view('profs/edit', $data);
         }
    } else {
     // init data
@@ -181,7 +181,7 @@ class Profs extends Controller {
         'phone_err' => ''
     ];
 
-    $this->view('profs/add', $data);
+    $this->view('profs/edit', $data);
    }
         
     }
