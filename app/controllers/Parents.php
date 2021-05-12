@@ -170,7 +170,7 @@ class Parents extends Controller {
                 }
                 }else {
                 // load view with errors
-                $this->view('parents/add', $data);
+                $this->view('parents/edi', $data);
                 }
             }else {
                 //  get parent
@@ -196,7 +196,7 @@ class Parents extends Controller {
                     'student_id_err' => ''
                 ];
                 // load view 
-                $this->view('parents/add' , $data);
+                $this->view('parents/edit' , $data);
             }
  }
     

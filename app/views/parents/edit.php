@@ -52,7 +52,7 @@
             </div>
 
         </div>
-        <form name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/parents/add" method="POST">
+        <form name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/parents/edit/<?php echo $data['id']?>" method="POST">
 
 
 

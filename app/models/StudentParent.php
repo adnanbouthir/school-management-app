@@ -45,4 +45,35 @@ class StudentParent {
         }
 
     }
+    public function updateParent($data) {
+        // preparing query 
+        $this->db->query('UPDATE parents SET
+        first_name = :first_name,
+        last_name = :last_name,
+        gender = :gender,
+        job = :job,
+        adress = :adress,
+        phone = :phone,
+        student_id = :student_id
+        WHERE id = :id
+        ');
+
+        // bind values
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':first_name', $data['first_name']);
+        $this->db->bind(':last_name', $data['last_name']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':job', $data['job']);
+        $this->db->bind(':adress', $data['adress']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':student_id', $data['student_id']);
+
+        // executing query 
+        if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+
+    } 
 }
