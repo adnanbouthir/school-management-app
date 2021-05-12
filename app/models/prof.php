@@ -38,7 +38,7 @@ class prof {
         }
     }
 
-    public function updateProf($data) {
+    public function updateProfs($data) {
         //  preparing query 
         $this->db->query('UPDATE professors SET
         first_name = :first_name,
@@ -47,9 +47,11 @@ class prof {
         class = :class,
         subject = :subject,
         phone = :phone
+        WHERE id = :id
         ');
 
         // binding values
+        $this->db->bind(':id', $data['id']);
         $this->db->bind(':first_name', $data['first_name']);
         $this->db->bind(':last_name', $data['last_name']);
         $this->db->bind(':gender', $data['gender']);
@@ -59,6 +61,18 @@ class prof {
 
         // executing query 
         if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public function deleteProf($id) {
+        $this->db->query('DELETE FROM professors WHERE id = :id');
+        $this->db->bind(':id' , $id);
+
+         // executing query 
+         if ($this->db->execute()) {
             return true;
         }else {
             return false;

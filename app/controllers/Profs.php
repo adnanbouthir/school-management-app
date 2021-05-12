@@ -113,6 +113,7 @@ class Profs extends Controller {
 
         // init data 
         $data =  [
+            'id' => $id,
             'first_name' => trim($_POST['first_name']),
             'last_name' => trim($_POST['last_name']),
             'gender' =>$_POST['gender'],
@@ -166,14 +167,17 @@ class Profs extends Controller {
             $this->view('profs/edit', $data);
         }
    } else {
+    //    get prof
+     $prof =  $this->profModel->getProfById($id);
     // init data
     $data =  [
-        'first_name' => '',
-        'last_name' => '',
-        'gender' =>'',
-        'class' => '',
-        'subject' => '',
-        'phone' => '',
+        'id' => $id,
+        'first_name' => $prof->first_name,
+        'last_name' => $prof->last_name,
+        'gender' => $prof->gender,
+        'class' => $prof->Class,
+        'subject' => $prof->subject,
+        'phone' => $prof->phone,
         'first_name_err' => '',
         'last_name_err' => '',
         'class_err' => '',
@@ -184,6 +188,20 @@ class Profs extends Controller {
     $this->view('profs/edit', $data);
    }
         
+ }
+    public function delete($id) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            if ($this->profModel->deleteProf($id)) {
+                flash('prof_message' , 'teacher REMOVED');
+                redirect('/profs');
+            }else {
+                die('Something went wrong');
+            }
+            
+        }else {
+            redirect('/profs');
+        }
     }
 
     public function show($id) {

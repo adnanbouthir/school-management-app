@@ -7,12 +7,24 @@
       </button>
 
       <div class="collapse navbar-collapse " id="navbarsExample02">
+      
         <ul class="navbar-nav me-auto d-flex flex-row bd-highlight">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/Pages/index">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo URLROOT;?>/Pages/about">about us</a>
+          <?php if(isset($_SESSION['admin_id'])) :  ?>
+          <a class="nav-link" href="<?php echo URLROOT;?>/students">students</a>
+          <?php endif; ?>
+          </li>
+          <li class="nav-item">
+          <?php if(isset($_SESSION['admin_id'])) :  ?>
+          <a class="nav-link" href="<?php echo URLROOT;?>/profs">proffesors</a>
+          <?php endif; ?>
+          </li>
+          <?php if(isset($_SESSION['admin_id'])) :  ?>
+          <a class="nav-link" href="<?php echo URLROOT;?>/parents">parents</a>
+          <?php endif; ?>
           </li>
         </ul>
         
