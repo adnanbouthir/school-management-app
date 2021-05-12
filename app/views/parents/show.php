@@ -17,13 +17,12 @@
 <p class="card-tittle">Serial num : <?php  echo $data['parents']->id; ?></p>
 <p class="card-tittle">gender : <?php  echo $data['parents']->gender; ?></p>
 <p class="card-tittle">job : <?php  echo $data['parents']->job; ?></p>
+<p class="card-tittle">child-serial-num : <?php  echo $data['parents']->student_id; ?></p>
 <p class="card-tittle">phone : <?php  echo $data['parents']->phone; ?></p>
 <p class="card-tittle">adress : <?php echo $data['parents']->adress; ?></p>
 <div>
 <a href="<?php echo URLROOT; ?>/parents/edit/<?php echo $data['parents']->id;?>" class="btn btn-success pull-left">EDIT</a>
-<form class="pull-right" action="<?php echo URLROOT;?>/parents/delete/<?php echo $data['parents']->id;?>" method="POST">
-<input type="submit" value="DELETE" class="btn btn-danger">
-</form>
+<p class="pull-right">to delete a parent, you must delete the child first</p>
 </div>
 
 
