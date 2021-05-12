@@ -48,7 +48,7 @@
         <div class="col-md-6 mx-auto">
             <div class="card card-body-bg-light mt-5 mb-4">
 
-                <h5 class="mx-auto" class="h3 mb-3 fw-normal">Add a parent</h5>
+                <h5 class="mx-auto" class="h3 mb-3 fw-normal">edit a parent</h5>
             </div>
 
         </div>
@@ -118,7 +118,7 @@
             </div>
 
 
-            <button class="w-100 btn btn-lg btn-primary mb-3 mt-3" type="submit">Add parent</button>
+            <button class="w-100 btn btn-lg btn-primary mb-3 mt-3" type="submit">edit parent</button>
         </form>
 
     </div>
