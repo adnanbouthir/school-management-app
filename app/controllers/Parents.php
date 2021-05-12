@@ -4,6 +4,8 @@ class Parents extends Controller {
     public function __construct()
     {
         $this->parentModel = $this->model('StudentParent');
+        $this->studentModel = $this->model('Student');
+
     }
 
     public function index() {
@@ -84,8 +86,12 @@ class Parents extends Controller {
             }
             
         }else {
+            $childs = $this->studentModel->getStudents();
+
+
             // init data
             $data = [
+                'childs' =>$childs,
                 'first_name' => '',
                 'last_name' => '',
                 'gender' => '',
