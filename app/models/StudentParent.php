@@ -13,4 +13,28 @@ class StudentParent {
 
         return $results;
     }
+    public function addParents($data) {
+        // preparing query 
+        $this->db->query('INSERT INTO parents
+        (first_name, last_name, gender, job, adress, phone, student_id)
+        VALUES(:first_name, :last_name, :gender, :job, :adress, :phone, :student_id)
+        ');
+
+        // bind values
+        $this->db->bind(':first_name', $data['first_name']);
+        $this->db->bind(':last_name', $data['last_name']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':job', $data['job']);
+        $this->db->bind(':adress', $data['adress']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':student_id', $data['student_id']);
+        
+        // executing query 
+        if ($this->db->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }
