@@ -5,7 +5,7 @@ class Profs extends Controller {
         if (!isset($_SESSION['admin_id'])) {
             redirect('/users/login');
         }
-        $this->profModel = $this->model('prof');
+        $this->profModel = $this->model('Prof');
         $this->userModel = $this->model('admin');
 
     }
