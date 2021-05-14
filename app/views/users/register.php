@@ -41,6 +41,7 @@
         color: #F7F7F7 !important;
     }
 </style>
+
 <main class="form-signup row">
     <div class="container-signup">
         <div class="col-md-6 mx-auto">
@@ -49,7 +50,8 @@
             </div>
 
         </div>
-        <form name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/register"
+        <div id="error"></div>
+        <form name="myForm" id="form" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/register"
             method="POST">
             <div class="form-floating">
                 <input type="text" class="form-control <?php echo (!empty($data['fname_err'])) ? 'is-invalid' : '';?>"
@@ -69,7 +71,7 @@
 
             <div class="form-floating">
                 <input type="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : '';?>"
-                    value="<?php echo $data['email_adress']; ?>" id="floatingInput" name="email"
+                    value="<?php echo $data['email_adress']; ?>" id="email" name="email"
                     placeholder="name@example.com">
                 <span class="'invalid-feedback"><?php echo $data['email_err'] ?> </span>
                 <label for="email">Email address <sup>*</sup></label>
@@ -77,7 +79,7 @@
 
             <div class="form-floating">
                 <input type="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : '';?>"
-                    value="<?php echo $data['password']; ?>" id="floatingInput" name="password"
+                    value="<?php echo $data['password']; ?>" id="password" name="password"
                     placeholder="name@example.com">
                 <span class="'invalid-feedback"><?php echo $data['password_err'] ?> </span>
                 <label for="password">password  <sup>*</sup></label>
