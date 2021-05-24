@@ -1,11 +1,11 @@
-function validateForm() {
-    var x = document.forms["myForm"]["email"].value;
-    var y = document.forms["myForm"]["password"].value;
-    if (x == "" && y == "") {
-      alert("form fields must be filled out");
-      return false;
-    }
-  }
+// function validateForm() {
+//     var x = document.forms["myForm"]["email"].value;
+//     var y = document.forms["myForm"]["password"].value;
+//     if (x == "" && y == "") {
+//       alert("form fields must be filled out");
+//       return false;
+//     }
+//   }
 
   const email = document.getElementById('email');
   const password = document.getElementById('password');
@@ -29,4 +29,4 @@ function validateForm() {
   }
   })
 
-  console.log('everything is working fine');
+  // console.log('everything is working fine');

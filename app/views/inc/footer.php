@@ -1,8 +1,15 @@
 
 <style>
   .footer {
-    margin-top: 0.8em !important;
-  }
+    margin-top: 2em !important;
+    background-color: #ffd1c8 !important;
+    color: #720001 !important;
+
+}
+.footer span {
+  color: #720001 !important;
+}
+  
 </style>
 <footer class="footer mt-auto py-3  bg-light">
   <div class="container d-flex justify-content-around">

@@ -54,22 +54,22 @@ class Parents extends Controller {
                 $data['first_name_err'] = 'please enter a name';
             }
             if (empty($data['last_name'])) {
-                $data['last_name_err'] = 'please enter a name';
+                $data['last_name_err'] = 'please enter a last name';
             }
             if (empty($data['gender'])) {
-                $data['gender_err'] = 'please enter a name';
+                $data['gender_err'] = 'please enter a gender';
             }
             if (empty($data['job'])) {
-                $data['job_err'] = 'please enter a name';
+                $data['job_err'] = 'please enter a job';
             }
             if (empty($data['adress'])) {
-                $data['adress_err'] = 'please enter a name';
+                $data['adress_err'] = 'please enter an adress';
             }
             if (empty($data['phone'])) {
-                $data['phone_err'] = 'please enter a name';
+                $data['phone_err'] = 'please enter a phone';
             }
             if (empty($data['student_id'])) {
-                $data['student_id_err'] = 'please enter a name';
+                $data['student_id_err'] = 'please select a child';
             }
             // make sure errors are empty 
             if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {
@@ -142,22 +142,22 @@ class Parents extends Controller {
                 $data['first_name_err'] = 'please enter a name';
             }
             if (empty($data['last_name'])) {
-                $data['last_name_err'] = 'please enter a name';
+                $data['last_name_err'] = 'please enter a last name';
             }
             if (empty($data['gender'])) {
-                $data['gender_err'] = 'please enter a name';
+                $data['gender_err'] = 'please enter a gender';
             }
             if (empty($data['job'])) {
-                $data['job_err'] = 'please enter a name';
+                $data['job_err'] = 'please enter a job';
             }
             if (empty($data['adress'])) {
-                $data['adress_err'] = 'please enter a name';
+                $data['adress_err'] = 'please enter an adress';
             }
             if (empty($data['phone'])) {
-                $data['phone_err'] = 'please enter a name';
+                $data['phone_err'] = 'please enter a phone';
             }
             if (empty($data['student_id'])) {
-                $data['student_id_err'] = 'please enter a name';
+                $data['student_id_err'] = 'please select a child';
             }
             // make sure errors are empty 
             if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {

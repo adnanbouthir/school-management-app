@@ -2,18 +2,21 @@
     background-color: #F7F7F7 !important;
     
 }
+.navbar {
+    background-color: #ffd1c8 !important;
+}
 .navbar-brand{
-    color: #ff6e6c !important;
+    color: #720001 !important;
 }
 .navbar-brand:hover{
-    color: #94a1b2  !important;
+    color: #ff6e6c  !important;
 }
 .nav-link {
     margin-left: 2em !important;
-    color: #ff6e6c !important;
+    color: #720001 !important;
 }
 .nav-link:hover {
-    color: #94a1b2 !important;
+    color: #ff6e6c !important;
 }
 body {
     background-color: #FFFFFF;
@@ -32,9 +35,13 @@ body {
 .btn-primary {
     background-color: #ff6e6c;
 }
-.btn-primary:hover {
-    background-color: #67568c;
-}
+
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    color: #ffd1c8 !important;
+    background-color: #450000 !important;
+    border-color: #450000 !important;
+  }
 .cards {
     margin-top: 1.4em;
 }
@@ -47,9 +54,8 @@ body {
     
 }
 .cards .card-body:hover {
-    background-color: #ff6e6c;
-    color: #F7F7F7;
-    
+    color: #ffd1c8;
+    background-color: #450000;
 }
 
 .text-muted {

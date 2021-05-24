@@ -45,7 +45,7 @@
 <main class="form-signup row">
     <div class="container-signup">
         <div class="col-md-6 mx-auto">
-            <div class="card card-body-bg-light mt-5 mb-4">
+            <div class="card card-body-bg-light mt-3 mb-4">
                 <h3 class="mx-auto" class="h3 mb-3 fw-normal"> Sign up</h3>
             </div>
 
