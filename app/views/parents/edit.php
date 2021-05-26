@@ -41,7 +41,10 @@
         color: #F7F7F7 !important;
     }
 </style>
+<div class="container pt-5">
 <a href="<?php echo URLROOT; ?>/parents" class="btn btn-primary"><i class="fa fa-backward"></i> back to parents</a>
+
+</div>
 <main class="form-signup">
 
     <div class="container-signup">
@@ -59,7 +62,7 @@
 
             <div class="form-floating">
                 <input type="text"
-                    class="form-control <?php echo (!empty($data['first_name_err'])) ? 'is-invalid' : '';?>"
+                    class="my-2 form-control <?php echo (!empty($data['first_name_err'])) ? 'is-invalid' : '';?>"
                     value="<?php echo $data['first_name']; ?>" id="floatingInput" name="first_name">
                 <span class="'invalid-feedback"><?php echo $data['first_name_err'] ?> </span>
                 <label for="first_name">first name <sup>*</sup></label>
@@ -67,28 +70,28 @@
 
             <div class="form-floating">
                 <input type="text"
-                    class="form-control <?php echo (!empty($data['last_name_err'])) ? 'is-invalid' : '';?>"
+                    class="my-2  form-control <?php echo (!empty($data['last_name_err'])) ? 'is-invalid' : '';?>"
                     value="<?php echo $data['last_name']; ?>" id="floatingInput" name="last_name">
                 <span class="'invalid-feedback"><?php echo $data['last_name_err'] ?> </span>
                 <label for="last_name">last name <sup>*</sup></label>
             </div>
 
             <div class="form-floating">
-                <input type="text" class="form-control <?php echo (!empty($data['job_err'])) ? 'is-invalid' : '';?>"
+                <input type="text" class="my-2 form-control <?php echo (!empty($data['job_err'])) ? 'is-invalid' : '';?>"
                     value="<?php echo $data['job']; ?>" id="floatingInput" name="job">
                 <span class="'invalid-feedback"><?php echo $data['job_err'] ?> </span>
                 <label for="job">job <sup>*</sup></label>
             </div>
 
             <div class="form-floating">
-                <input type="text" class="form-control <?php echo (!empty($data['adress_err'])) ? 'is-invalid' : '';?>"
+                <input type="text" class="my-2 form-control <?php echo (!empty($data['adress_err'])) ? 'is-invalid' : '';?>"
                     value="<?php echo $data['adress']; ?>" id="floatingInput" name="adress">
                 <span class="'invalid-feedback"><?php echo $data['adress_err'] ?> </span>
                 <label for="adress">adress <sup>*</sup></label>
             </div>
 
             <div class="form-floating">
-                <input type="text" class="form-control <?php echo (!empty($data['phone_err'])) ? 'is-invalid' : '';?>"
+                <input type="text" class="my-2 form-control <?php echo (!empty($data['phone_err'])) ? 'is-invalid' : '';?>"
                     value="<?php echo $data['phone']; ?>" id="floatingInput" name="phone">
                 <span class="'invalid-feedback"><?php echo $data['phone_err'] ?> </span>
                 <label for="phone">phone <sup>*</sup></label>
@@ -99,7 +102,7 @@
       
 
             <div class="form-floating">
-                <select name="gender" id="" class="form-select"  required>
+                <select name="gender" id="" class="my-2 form-select"  required>
                     <option selected>Gender</option>
                     <option value="male">male</option>
                     <option value="female">female</option>
@@ -108,7 +111,7 @@
             </div>
 
             <div class="form-floating">
-                <select name="child" id="" class="form-select"  required>
+                <select name="child" id="" class="my-2 form-select"  required>
                     <option selected>select child</option>
                     <?php foreach($data['childs'] as $child) : ?>
                     <option value="<?php echo $child->id;?>"><?php echo $child->first_name; ?></option>

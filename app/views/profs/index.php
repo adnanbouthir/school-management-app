@@ -2,15 +2,23 @@
 <?php require APPROOT .'/views/inc/nav.php'; ?>
 <?php flash('prof_message'); ?>
 
-<div class="row mb-3">
-  <div class="col-md-6">
-  <h1>proffesors</h1>
+
+<div class="title">
+<div class="d-flex justify-content-between">
+
+<div class="py-1 px-4">
+<h1>professors</h1>
+</div>
+
+
+  <div class="py-3 px-4">
+    <a href="<?php echo URLROOT; ?>/profs/add" class="btn btn-primary pull-right">
+      <i class="fa fa-pencil"></i> Add professor
+    </a>
   </div>
-  <div class="col-md-6">
-  <a href="<?php echo URLROOT; ?>/profs/add" class="btn btn-primary pull-right">
-  <i class="fa fa-pencil"></i> Add proffesor
-  </a>
-  </div>
+
+</div>
+
 </div>
 
 <?php foreach($data['profs'] as $prof) : ?>
