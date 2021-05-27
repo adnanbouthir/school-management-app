@@ -23,7 +23,7 @@
 
 <?php foreach($data['parents'] as $parent) : ?>
 
-
+<div class="container">
 <div class="card card-body mb-3">
 <h5 class="card-tittle mb-4 mx-auto"><?php echo $parent->first_name; ?></h5>
 <hr>
@@ -36,6 +36,8 @@
 
 
 </div>
+</div>
+
 
 <?php endforeach; ?>
 <?php require APPROOT .'/views/inc/footer.php'; ?>

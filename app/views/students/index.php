@@ -41,8 +41,8 @@
 
 <?php foreach($data['students'] as $student) : ?>
 
-
-<div class="card card-body mb-3">
+<div class="container">
+<div class="card card-body  mb-3">
   <h5 class="card-tittle mb-4 mx-auto"><?php echo $student->first_name; ?></h5>
   <hr>
   <p class="card-tittle">last name : <?php echo $student->last_name; ?></p>
@@ -55,6 +55,8 @@
 
 
 </div>
+</div>
+
 
 <?php endforeach; ?>
 <?php require APPROOT .'/views/inc/footer.php'; ?>
