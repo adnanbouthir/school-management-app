@@ -1,14 +1,15 @@
-<?php 
-class Parents extends Controller {
+<?php
+class Parents extends Controller
+{
 
     public function __construct()
     {
         $this->parentModel = $this->model('StudentParent');
         $this->studentModel = $this->model('Student');
-
     }
 
-    public function index() {
+    public function index()
+    {
         //  fetch for parents 
 
         $parents = $this->parentModel->getParents();
@@ -24,7 +25,8 @@ class Parents extends Controller {
 
     // method to add parents
 
-    public function add() {
+    public function add()
+    {
         //  check if form is submitted
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -72,26 +74,25 @@ class Parents extends Controller {
                 $data['student_id_err'] = 'please select a child';
             }
             // make sure errors are empty 
-            if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {
+            if (empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {
                 //  validated
                 if ($this->parentModel->addParents($data)) {
                     flash('parent_message', 'Parent added successfully');
                     redirect('/parents');
-                }else {
+                } else {
                     die('Something went wrong');
                 }
-            }else {
+            } else {
                 // load view with errors
                 $this->view('parents/add', $data);
             }
-            
-        }else {
+        } else {
             $childs = $this->studentModel->getStudents();
 
 
             // init data
             $data = [
-                'childs' =>$childs,
+                'childs' => $childs,
                 'first_name' => '',
                 'last_name' => '',
                 'gender' => '',
@@ -111,7 +112,8 @@ class Parents extends Controller {
             $this->view('parents/add', $data);
         }
     }
-    public function edit($id) {
+    public function edit($id)
+    {
         //  check if form is submitted
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -160,52 +162,53 @@ class Parents extends Controller {
                 $data['student_id_err'] = 'please select a child';
             }
             // make sure errors are empty 
-            if(empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {
+            if (empty($data['first_name_err']) && empty($data['last_name_err']) && empty($data['gender_err']) && empty($data['job_err']) && empty($data['phone_err'])) {
                 //  validated
                 if ($this->parentModel->updateParent($data)) {
                     flash('parent_message', 'Parent updated successfully');
                     redirect('/parents');
-                }else {
+                } else {
                     die('Something went wrong');
                 }
-                }else {
+            } else {
                 // load view with errors
                 $this->view('parents/edit', $data);
-                }
-            }else {
-                //  get parent
-                $parent = $this->parentModel->getParentById($id);
-                // get students 
-                $childs = $this->studentModel->getStudents();
-                // init data 
-                $data = [
-                    'childs' =>$childs,
-                    'id' => $parent->id,
-                    'first_name' => $parent->first_name,
-                    'last_name' => $parent->last_name,
-                    'gender' => $parent->gender,
-                    'job' => $parent->job,
-                    'adress' => $parent->adress,
-                    'phone' =>$parent->phone,
-                    'first_name_err' => '',
-                    'last_name_err' => '',
-                    'gender_err' => '',
-                    'job_err' => '',
-                    'adress_err' => '',
-                    'phone_err' => '',
-                    'student_id_err' => ''
-                ];
-                // load view 
-                $this->view('parents/edit' , $data);
             }
- }
-    
-    public function show($id) {
+        } else {
+            //  get parent
+            $parent = $this->parentModel->getParentById($id);
+            // get students 
+            $childs = $this->studentModel->getStudents();
+            // init data 
+            $data = [
+                'childs' => $childs,
+                'id' => $parent->id,
+                'first_name' => $parent->first_name,
+                'last_name' => $parent->last_name,
+                'gender' => $parent->gender,
+                'job' => $parent->job,
+                'adress' => $parent->adress,
+                'phone' => $parent->phone,
+                'first_name_err' => '',
+                'last_name_err' => '',
+                'gender_err' => '',
+                'job_err' => '',
+                'adress_err' => '',
+                'phone_err' => '',
+                'student_id_err' => ''
+            ];
+            // load view 
+            $this->view('parents/edit', $data);
+        }
+    }
+
+    public function show($id)
+    {
         $parent = $this->parentModel->getParentById($id);
 
         // init data
         $data = [
-            'parents' => $parent 
+            'parents' => $parent
         ];
 
         $this->view('parents/show', $data);
