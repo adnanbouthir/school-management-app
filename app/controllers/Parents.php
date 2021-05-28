@@ -170,7 +170,7 @@ class Parents extends Controller {
                 }
                 }else {
                 // load view with errors
-                $this->view('parents/edi', $data);
+                $this->view('parents/edit', $data);
                 }
             }else {
                 //  get parent
