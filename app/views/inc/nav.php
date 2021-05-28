@@ -22,8 +22,14 @@
           <a class="nav-link" href="<?php echo URLROOT;?>/profs">proffesors</a>
           <?php endif; ?>
           </li>
+          <li>
           <?php if(isset($_SESSION['admin_id'])) :  ?>
           <a class="nav-link" href="<?php echo URLROOT;?>/parents">parents</a>
+          <?php endif; ?>
+          </li>
+          <li>
+          <?php if(isset($_SESSION['admin_id'])) :  ?>
+          <a class="nav-link" href="<?php echo URLROOT;?>/statistics">statistics</a>
           <?php endif; ?>
           </li>
         </ul>

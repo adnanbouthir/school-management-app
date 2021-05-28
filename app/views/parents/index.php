@@ -1,6 +1,6 @@
 <?php require APPROOT .'/views/inc/header.php'; ?>
 <?php require APPROOT .'/views/inc/nav.php'; ?>
-<?php flash('prof_message'); ?>
+<?php flash('parent_message'); ?>
 
 
 <div class="title">
