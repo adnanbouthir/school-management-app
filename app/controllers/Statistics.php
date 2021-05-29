@@ -7,8 +7,17 @@ class Statistics extends Controller
     }
 
     public function index() {
+        
+        // $data = [];
+        // $this->view('statistics/index', $data);
+        $data = [
+            $this->statisticModel->genderCountMale(),
+            $this->statisticModel->genderCountFemale()
 
-        $data = [];
-        $this->view('statistics/index', $data);
+        ];
+         
+         $this->view('statistics/index', $data);
+
+
     }
 }
