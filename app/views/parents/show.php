@@ -1,7 +1,7 @@
 <?php require APPROOT .'/views/inc/header.php'; ?>
 <?php require APPROOT .'/views/inc/nav.php'; ?>
 
-<a href="<?php echo URLROOT; ?>/parents" class="btn btn-primary mt-3"><i class="fa fa-backward"></i>back to parents</a>
+<a href="<?php echo URLROOT; ?>/parents" class="btn btn-primary mt-3"><i class="fa fa-backward"></i>  back to parents</a>
 <br>
 <h1 class="mt-4">more details on parents</h1>
 
@@ -21,7 +21,7 @@
 <p class="card-tittle">phone : <?php  echo $data['parents']->phone; ?></p>
 <p class="card-tittle">adress : <?php echo $data['parents']->adress; ?></p>
 <div>
-<a href="<?php echo URLROOT; ?>/parents/edit/<?php echo $data['parents']->id;?>" class="btn btn-success pull-left">EDIT</a>
+<a href="<?php echo URLROOT; ?>/parents/edit/<?php echo $data['parents']->id;?>" class="btn btn-primary pull-left">EDIT</a>
 <p class="pull-right">to delete a parent, you must delete the child first</p>
 </div>
 

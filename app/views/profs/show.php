@@ -1,7 +1,7 @@
 <?php require APPROOT .'/views/inc/header.php'; ?>
 <?php require APPROOT .'/views/inc/nav.php'; ?>
 
-<a href="<?php echo URLROOT; ?>/profs" class="btn btn-primary mt-3"><i class="fa fa-backward"></i>back to proffesors</a>
+<a href="<?php echo URLROOT; ?>/profs" class="btn btn-primary mt-3"><i class="fa fa-backward"></i>  back to proffesors</a>
 <br>
 <h1 class="mt-4">more details on profs</h1>
 
@@ -20,7 +20,7 @@
 <p class="card-tittle">phone : <?php  echo $data['profs']->phone; ?></p>
 <p class="card-tittle">class : <?php echo $data['profs']->Class; ?></p>
 <div>
-<a href="<?php echo URLROOT; ?>/profs/edit/<?php echo $data['profs']->id;?>" class="btn btn-success pull-left">EDIT</a>
+<a href="<?php echo URLROOT; ?>/profs/edit/<?php echo $data['profs']->id;?>" class="btn btn-primary pull-left">EDIT</a>
 <form class="pull-right" action="<?php echo URLROOT;?>/profs/delete/<?php echo $data['profs']->id;?>" method="POST">
 <input type="submit" value="DELETE" class="btn btn-danger">
 </form>

@@ -39,7 +39,12 @@
             <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/users/logout">logout</a>
           </li>
+          <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
             <?php else : ?>
+            
           <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/users/register">sign up</a>
           </li>
