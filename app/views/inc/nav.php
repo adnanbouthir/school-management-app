@@ -39,8 +39,8 @@
             <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/users/logout">logout</a>
           </li>
-          <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <form action="<?php echo URLROOT; ?>/search/fetch" method="POST" class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-primary" type="submit">Search</button>
         </form>
             <?php else : ?>
