@@ -7,7 +7,7 @@
 <div class="d-flex justify-content-between">
 
 <div class="py-1 px-4">
-<h1>Students</h1>
+<h1 class="titlejs">Students</h1>
 </div>
 
 

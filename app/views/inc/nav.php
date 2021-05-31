@@ -19,7 +19,7 @@
           </li>
           <li class="nav-item">
           <?php if(isset($_SESSION['admin_id'])) :  ?>
-          <a class="nav-link" href="<?php echo URLROOT;?>/profs">proffesors</a>
+          <a class="nav-link proof-link" id="prof-link" href="<?php echo URLROOT;?>/profs">proffesors</a>
           <?php endif; ?>
           </li>
           <li>
@@ -39,7 +39,7 @@
             <li class="nav-item ">
             <a class="nav-link" aria-current="page" href="<?php echo URLROOT;?>/users/logout">logout</a>
           </li>
-          <form action="<?php echo URLROOT; ?>/search/fetch" method="POST" class="d-flex">
+          <form action="" method="POST" class="d-flex search-form" >
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
           <button class="btn btn-primary" type="submit">Search</button>
         </form>

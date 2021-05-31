@@ -51,7 +51,7 @@
 
         </div>
         <div id="error"></div>
-        <form id="form" name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/login"
+        <form id="jsform1" name="myForm" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/login"
             method="POST">
            
 

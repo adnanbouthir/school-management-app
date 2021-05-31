@@ -51,7 +51,7 @@
 
         </div>
         <div id="error"></div>
-        <form name="myForm" id="form" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/register"
+        <form name="myForm" id="jsform" onsubmit="return validateForm()" action="<?php echo URLROOT; ?>/users/register"
             method="POST">
             <div class="form-floating">
                 <input type="text" class="form-control <?php echo (!empty($data['fname_err'])) ? 'is-invalid' : '';?>"
